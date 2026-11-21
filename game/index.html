@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lantern Lane — Spot the Difference</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="hud">
+    <div class="hud-left">
+      <div id="game-title">🏮 Lantern Lane</div>
+      <div id="level-name">Level 1 · The Dumpling Stall</div>
+    </div>
+    <div class="hud-mid">
+      <div id="counter">Found 0 / 7</div>
+      <div id="timer-wrap"><div id="timer-bar"></div><span id="timer-text">180s</span></div>
+    </div>
+    <div class="hud-right">
+      <div id="score">Score 0</div>
+      <button id="hint-btn" type="button">💡 Hint (3)</button>
+      <button id="restart-btn" type="button">↻ Restart</button>
+      <button id="mute-btn" type="button">🔊</button>
+    </div>
+  </header>
+
+  <nav id="level-bar" aria-label="Levels">
+    <button class="level-btn active" data-level="0" type="button">1 · Dumpling Stall</button>
+    <button class="level-btn locked" data-level="1" type="button">2 · Lantern Shop 🔒</button>
+    <button class="level-btn locked" data-level="2" type="button">3 · Midnight Garden 🔒</button>
+  </nav>
+
+  <main id="boards">
+    <section class="panel" id="panel-a">
+      <h2>Original</h2>
+      <div class="svg-holder" id="holder-a"></div>
+    </section>
+    <section class="panel" id="panel-b">
+      <h2>Changed</h2>
+      <div class="svg-holder" id="holder-b"></div>
+    </section>
+  </main>
+
+  <p id="message">Click a difference on either picture — it counts on both. H = hint, R = restart.</p>
+
+  <div id="overlay" class="hidden">
+    <div id="overlay-card">
+      <h2 id="overlay-title"></h2>
+      <p id="overlay-text"></p>
+      <div id="overlay-stats"></div>
+      <button id="overlay-btn" type="button"></button>
+    </div>
+  </div>
+
+  <div id="selftest-output" style="display:none"></div>
+</div>
+<script src="scenes.js"></script>
+<script src="render.js"></script>
+<script src="audio.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
